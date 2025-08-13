@@ -1,5 +1,4 @@
 import { useAccount } from 'wagmi'
-import { Button } from '@/components/ui/Button'
 import { useMarketStore } from '@/stores/marketStore'
 import { 
   UserIcon,
@@ -106,5 +105,3 @@ export function Profile() {
     </div>
   )
 }
-```
-

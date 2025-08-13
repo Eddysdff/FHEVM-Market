@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 import { useMarketStore } from '@/stores/marketStore'
 import { Button } from '@/components/ui/Button'
 import { 
-  MagnifyingGlassIcon,
-  FunnelIcon
+  MagnifyingGlassIcon
 } from '@heroicons/react/24/outline'
 
 export function Markets() {

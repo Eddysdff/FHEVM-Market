@@ -3,7 +3,7 @@ import { Button } from './ui/Button'
 
 export function ConnectButton() {
   const { address, isConnected } = useAccount()
-  const { connect, connectors, isLoading, pendingConnector } = useConnect()
+  const { connect, connectors, isPending } = useConnect()
   const { disconnect } = useDisconnect()
 
   if (isConnected) {
@@ -30,12 +30,10 @@ export function ConnectButton() {
           key={connector.uid}
           variant="primary"
           size="sm"
-          disabled={!connector.ready || isLoading}
+          disabled={!connector.ready || isPending}
           onClick={() => connect({ connector })}
         >
-          {isLoading && pendingConnector?.uid === connector.uid
-            ? '连接中...'
-            : `连接 ${connector.name}`}
+          {isPending ? '连接中...' : `连接 ${connector.name}`}
         </Button>
       ))}
     </div>

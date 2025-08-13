@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useMarketStore } from '@/stores/marketStore'
 import { Button } from '@/components/ui/Button'
@@ -145,5 +145,3 @@ export function MarketDetail() {
     </div>
   )
 }
-```
-
