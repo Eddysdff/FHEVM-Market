@@ -20,10 +20,10 @@ export function Layout({ children }: LayoutProps) {
   const location = useLocation()
 
   const navigation = [
-    { name: '首页', href: '/', icon: HomeIcon },
-    { name: '市场', href: '/markets', icon: ChartBarIcon },
-    { name: '创建', href: '/create', icon: PlusIcon },
-    { name: '个人', href: '/profile', icon: UserIcon },
+    { name: 'Home', href: '/', icon: HomeIcon },
+    { name: 'Markets', href: '/markets', icon: ChartBarIcon },
+    { name: 'Create', href: '/create', icon: PlusIcon },
+    { name: 'Profile', href: '/profile', icon: UserIcon },
   ]
 
   return (

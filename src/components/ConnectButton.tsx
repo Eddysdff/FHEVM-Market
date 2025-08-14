@@ -16,9 +16,9 @@ export function ConnectButton() {
           variant="secondary"
           size="sm"
           onClick={() => disconnect()}
-        >
-          断开连接
-        </Button>
+                  >
+            Disconnect
+          </Button>
       </div>
     )
   }
@@ -33,7 +33,7 @@ export function ConnectButton() {
           disabled={!connector.ready || isPending}
           onClick={() => connect({ connector })}
         >
-          {isPending ? '连接中...' : `连接 ${connector.name}`}
+          {isPending ? 'Connecting...' : `Connect ${connector.name}`}
         </Button>
       ))}
     </div>

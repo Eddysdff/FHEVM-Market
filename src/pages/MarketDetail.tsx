@@ -20,7 +20,7 @@ export function MarketDetail() {
     return (
       <div className="text-center py-12">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto"></div>
-        <p className="mt-4 text-gray-600 dark:text-gray-300">加载中...</p>
+        <p className="mt-4 text-gray-600 dark:text-gray-300">Loading...</p>
       </div>
     )
   }
@@ -28,7 +28,7 @@ export function MarketDetail() {
   if (!market) {
     return (
       <div className="text-center py-12">
-        <p className="text-gray-600 dark:text-gray-300">市场不存在</p>
+        <p className="text-gray-600 dark:text-gray-300">Market not found</p>
       </div>
     )
   }
@@ -47,7 +47,7 @@ export function MarketDetail() {
               ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
               : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
           }`}>
-            {market.isActive ? '进行中' : '已结束'}
+                         {market.isActive ? 'Active' : 'Resolved'}
           </span>
         </div>
 
@@ -55,21 +55,21 @@ export function MarketDetail() {
           <div className="flex items-center space-x-3">
             <ClockIcon className="w-5 h-5 text-gray-400" />
             <div>
-              <p className="text-sm text-gray-500">结束时间</p>
+                             <p className="text-sm text-gray-500">End Time</p>
               <p className="font-medium">{new Date(market.endTime).toLocaleString()}</p>
             </div>
           </div>
           <div className="flex items-center space-x-3">
             <CurrencyDollarIcon className="w-5 h-5 text-gray-400" />
             <div>
-              <p className="text-sm text-gray-500">总池</p>
+                             <p className="text-sm text-gray-500">Total Pool</p>
               <p className="font-medium">{market.totalPool} ETH</p>
             </div>
           </div>
           <div className="flex items-center space-x-3">
             <UserGroupIcon className="w-5 h-5 text-gray-400" />
             <div>
-              <p className="text-sm text-gray-500">参与者</p>
+                             <p className="text-sm text-gray-500">Participants</p>
               <p className="font-medium">0</p>
             </div>
           </div>
@@ -79,11 +79,11 @@ export function MarketDetail() {
       {/* Betting Section */}
       {market.isActive && (
         <div className="card p-6 space-y-6">
-          <h2 className="text-xl font-semibold">投注</h2>
+          <h2 className="text-xl font-semibold">Place Bet</h2>
           
           {/* Outcome Selection */}
           <div className="space-y-4">
-            <label className="block text-sm font-medium">选择结果</label>
+                         <label className="block text-sm font-medium">Select Outcome</label>
             <div className="grid md:grid-cols-2 gap-4">
               <button
                 onClick={() => setSelectedOutcome(market.outcomeA)}
@@ -109,8 +109,8 @@ export function MarketDetail() {
           </div>
 
           {/* Bet Amount */}
-          <div className="space-y-2">
-            <label className="block text-sm font-medium">投注金额 (ETH)</label>
+                     <div className="space-y-2">
+             <label className="block text-sm font-medium">Bet Amount (ETH)</label>
             <input
               type="number"
               value={betAmount}
@@ -125,19 +125,19 @@ export function MarketDetail() {
           <Button 
             disabled={!selectedOutcome || !betAmount}
             className="w-full"
-          >
-            加密投注
-          </Button>
+                      >
+              Encrypted Bet
+            </Button>
         </div>
       )}
 
       {/* Results */}
       {market.isResolved && (
         <div className="card p-6 space-y-4">
-          <h2 className="text-xl font-semibold">结果</h2>
+          <h2 className="text-xl font-semibold">Results</h2>
           <div className="p-4 bg-green-50 dark:bg-green-900 rounded-lg">
             <p className="text-green-800 dark:text-green-200">
-              获胜结果: <span className="font-medium">{market.winningOutcome}</span>
+              Winning Outcome: <span className="font-medium">{market.winningOutcome}</span>
             </p>
           </div>
         </div>

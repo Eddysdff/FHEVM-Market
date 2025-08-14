@@ -14,7 +14,7 @@ export function Profile() {
   if (!isConnected) {
     return (
       <div className="text-center py-12">
-        <p className="text-gray-600 dark:text-gray-300">请先连接钱包</p>
+        <p className="text-gray-600 dark:text-gray-300">Please connect your wallet first</p>
       </div>
     )
   }
@@ -28,7 +28,7 @@ export function Profile() {
             <UserIcon className="w-8 h-8 text-primary-600" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold">个人资料</h1>
+            <h1 className="text-2xl font-bold">Profile</h1>
             <p className="text-gray-600 dark:text-gray-300">
               {address?.slice(0, 6)}...{address?.slice(-4)}
             </p>
@@ -40,28 +40,28 @@ export function Profile() {
             <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mx-auto">
               <CurrencyDollarIcon className="w-6 h-6 text-green-600" />
             </div>
-            <p className="text-sm text-gray-500">总收益</p>
+            <p className="text-sm text-gray-500">Total Earnings</p>
             <p className="text-xl font-bold">0 ETH</p>
           </div>
           <div className="text-center space-y-2">
             <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mx-auto">
               <ChartBarIcon className="w-6 h-6 text-blue-600" />
             </div>
-            <p className="text-sm text-gray-500">总投注</p>
+            <p className="text-sm text-gray-500">Total Bets</p>
             <p className="text-xl font-bold">{userBets.length}</p>
           </div>
           <div className="text-center space-y-2">
             <div className="w-12 h-12 bg-yellow-100 dark:bg-yellow-900 rounded-lg flex items-center justify-center mx-auto">
               <TrophyIcon className="w-6 h-6 text-yellow-600" />
             </div>
-            <p className="text-sm text-gray-500">获胜次数</p>
+            <p className="text-sm text-gray-500">Wins</p>
             <p className="text-xl font-bold">0</p>
           </div>
           <div className="text-center space-y-2">
             <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mx-auto">
               <UserIcon className="w-6 h-6 text-purple-600" />
             </div>
-            <p className="text-sm text-gray-500">参与市场</p>
+            <p className="text-sm text-gray-500">Markets Joined</p>
             <p className="text-xl font-bold">0</p>
           </div>
         </div>
@@ -69,20 +69,20 @@ export function Profile() {
 
       {/* Betting History */}
       <div className="card p-6 space-y-6">
-        <h2 className="text-xl font-semibold">投注历史</h2>
+        <h2 className="text-xl font-semibold">Betting History</h2>
         
         {userBets.length === 0 ? (
           <div className="text-center py-8">
-            <p className="text-gray-600 dark:text-gray-300">暂无投注记录</p>
+            <p className="text-gray-600 dark:text-gray-300">No betting records</p>
           </div>
         ) : (
           <div className="space-y-4">
             {userBets.map((bet) => (
               <div key={bet.id} className="flex justify-between items-center p-4 border border-gray-200 dark:border-gray-600 rounded-lg">
                 <div>
-                  <p className="font-medium">市场 #{bet.marketId}</p>
+                  <p className="font-medium">Market #{bet.marketId}</p>
                   <p className="text-sm text-gray-600 dark:text-gray-300">
-                    投注: {bet.outcome} - {bet.amount} ETH
+                    Bet: {bet.outcome} - {bet.amount} ETH
                   </p>
                 </div>
                 <div className="text-right">
@@ -94,7 +94,7 @@ export function Profile() {
                       ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
                       : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
                   }`}>
-                    {bet.isEncrypted ? '已加密' : '未加密'}
+                                         {bet.isEncrypted ? 'Encrypted' : 'Not Encrypted'}
                   </span>
                 </div>
               </div>
